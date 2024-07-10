@@ -1,19 +1,19 @@
 import './App.css';
-import Logo from './img/Logo.png';
+import Logo from './Logo.png';
 
 function Nav(){
     return (
-        <nav>
-            <img src={Logo}/>
-            <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Acerca de</a></li>
-                <li><a href="">Menú</a></li>
-                <li><a href="">Reservas</a></li>
-                <li><a href="">Pedidos en línea</a></li>
-                <li><a href="">Iniciar sesión</a></li>
-            </ul>
-        </nav>
+        <nav className="nav">
+        <ul className="nav-list">
+          <li className="nav-item logo"><a href="#"><img src={Logo} alt="Little Lemon" className="nav-logo"/></a></li>
+          <li className="nav-item"><a href="#">Inicio</a></li>
+          <li className="nav-item"><a href="#">Acerca de</a></li>
+          <li className="nav-item"><a href="#">Menú</a></li>
+          <li className="nav-item"><a href="#">Reservas</a></li>
+          <li className="nav-item"><a href="#">Pedidos en línea</a></li>
+          <li className="nav-item"><a href="#">Iniciar sesión</a></li>
+        </ul>
+      </nav>
     );
 }
 

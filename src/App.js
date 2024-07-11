@@ -6,7 +6,6 @@ import Especiales from './Specials';
 import Testimonios from './Testimonials';
 import Destacado from './Highlight';
 import Footer from './Footer';
-import Reservar from './BookingPage';
 import BookingForm from './BookingForm';
 
 

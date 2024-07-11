@@ -8,9 +8,16 @@ function BookingForm({ availableTimes, dispatch }) {
     occasion: ''
   });
 
+  const [errors, setErrors] = useState({});
+  const [isFormValid, setIsFormValid] = useState(false);
+
   useEffect(() => {
     console.log('availableTimes:', availableTimes); // Esto te ayudará a verificar que availableTimes está definido
   }, [availableTimes]);
+
+  useEffect(() => {
+    validateForm();
+  }, [formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +36,38 @@ function BookingForm({ availableTimes, dispatch }) {
     console.log('Reservación enviada:', formData);
   };
 
+  const validateForm = () => {
+    const errors = {};
+
+    // Validación de fecha
+    const selectedDate = new Date(formData.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (!formData.date) {
+      errors.date = '';
+    } else if (selectedDate < today) {
+      errors.date = 'La fecha no puede ser en el pasado';
+    }
+
+    // Validación de hora
+    if (!formData.time) {
+        errors.time = 'La hora es requerida';
+      }
+
+    // Validación de cantidad de comensales
+    if (!formData.guests || formData.guests < 1) {
+      errors.guests = '';
+    }
+
+    // Validación de ocasión
+    if (!formData.occasion) {
+        errors.occasion = 'La ocasión es requerida';
+      }
+
+    setErrors(errors);
+    setIsFormValid(Object.keys(errors).length === 0);
+  };
+
   return (
     <>
       <h1>Formulario de reservación</h1>
@@ -43,6 +82,7 @@ function BookingForm({ availableTimes, dispatch }) {
             onChange={handleChange}
             required
           />
+          {errors.date && <p className="error">{errors.date}</p>}
         </div>
         <div>
           <label htmlFor="time">Hora:</label>
@@ -72,6 +112,7 @@ function BookingForm({ availableTimes, dispatch }) {
             required
             min="1"
           />
+          {errors.guests && <p className="error">{errors.guests}</p>}
         </div>
         <div>
           <label htmlFor="occasion">Ocasión:</label>
@@ -87,7 +128,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <option value="aniversario">Aniversario</option>
           </select>
         </div>
-        <button type="submit">Enviar reserva</button>
+        <button type="submit" disabled={!isFormValid}>Enviar reserva</button>
       </form>
     </>
   );

@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 import Logo from './Logo-footer.png';
 
@@ -10,12 +12,10 @@ function Footer(){
         </div>
         <div className="footer-links">
           <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Menú</a></li>
-            <li><a href="#">Reservas</a></li>
-            <li><a href="#">Pedidos en línea</a></li>
-            <li><a href="#">Iniciar sesión</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/specials">Especiales</Link></li>
+            <li><Link to="/testimonials">Testimonios</Link></li>
+            <li><Link to="/highlight">Destacado</Link></li>
           </ul>
         </div>
         <div className="footer-contact">

@@ -14,6 +14,7 @@ function Header() {
           <li className="nav-item"><Link to="/especiales">Especiales</Link></li>
           <li className="nav-item"><Link to="/testimonios">Testimonios</Link></li>
           <li className="nav-item"><Link to="/destacado">Destacado</Link></li>
+          <li className="nav-item"><Link to="/reservar">Reservar</Link></li>
         </ul>
       </nav>
     </header>

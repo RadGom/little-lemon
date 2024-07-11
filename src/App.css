@@ -405,6 +405,54 @@ a{
   margin: 0;
 }
 
+/* Estilos para el formulario de reserva */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 10px auto;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+}
+
+.booking-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  margin-bottom: 5px;
+  color: #334e68;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  font-family: 'Gotham-Book';
+  padding: 10px;
+  border: none;
+  background-color: #ffbf00;
+  color: #495E57;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.booking-form button:hover {
+  background-color: #e6a700;
+}
+
+
 /* Media Queries */
 @media (max-width: 768px) {
   .hero,

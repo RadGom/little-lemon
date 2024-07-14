@@ -27,9 +27,9 @@ function Footer(){
         <div className="footer-social">
           <h3>Redes Sociales</h3>
           <div className="social-icons">
-            <a href="#"><i className="fab fa-facebook"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>

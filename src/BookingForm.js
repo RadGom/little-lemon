@@ -80,6 +80,7 @@ function BookingForm({ availableTimes, dispatch }) {
             name="date"
             value={formData.date}
             onChange={handleChange}
+            aria-label="Seleccionar fecha"
             required
           />
           {errors.date && <p className="error">{errors.date}</p>}
@@ -128,7 +129,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <option value="aniversario">Aniversario</option>
           </select>
         </div>
-        <button type="submit" disabled={!isFormValid}>Enviar reserva</button>
+        <button type="submit" disabled={!isFormValid}>Confirmar reservación</button>
       </form>
     </>
   );

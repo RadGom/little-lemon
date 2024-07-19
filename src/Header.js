@@ -9,8 +9,8 @@ function Header() {
         <ul className="nav-list">
           <li className="nav-item logo">
             <Link to="/"><img src={Logo} alt="Logo" className="nav-logo" aria-label="Little Lemon Logo" /></Link>
-            <Link to="/">Inicio</Link>
           </li>
+          <li className="nav-item"><Link to="/">Inicio</Link></li>
           <li className="nav-item"><Link to="/especiales">Especiales</Link></li>
           <li className="nav-item"><Link to="/testimonios">Testimonios</Link></li>
           <li className="nav-item"><Link to="/destacado">Destacado</Link></li>

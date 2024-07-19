@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
             culinaria única, con platos frescos y auténticos que celebran los
             sabores mediterráneos.
         </p>
-        <button className="cta-button">Reservar mesa</button>
+        <button className="cta-button"><Link to="/reservar">Reservar mesa</Link></button>
         </div>
         <div className="hero-image">
         <img src="/img/restauranfood1.jpg" alt="Platos deliciosos" />

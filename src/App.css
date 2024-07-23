@@ -106,6 +106,8 @@ a{
 
 .nav-item a:hover {
   color: #F4CE14;
+  text-decoration: underline;
+  transition: 0.2s;
 }
 
 .nav-item:last-child {
@@ -161,7 +163,7 @@ a{
   padding: 10px 20px;
   color: #495E57;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 20px;
   border-radius: 16px;
   font-family: 'Gotham-Book';
@@ -399,6 +401,7 @@ a{
 .footer-bottom {
   background-color: #777;
   padding: 10px 0;
+  margin-top: 20px;
 }
 
 .footer-bottom p {

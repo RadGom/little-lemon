@@ -505,3 +505,12 @@ a{
     text-align: center;
   }
 }
+
+.no-bullets{
+  list-style-type: none;
+  padding: 0;
+}
+
+.icon-confirm{
+  color: #008000;
+}

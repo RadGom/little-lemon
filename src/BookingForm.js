@@ -10,9 +10,10 @@ function BookingForm({ availableTimes, dispatch }) {
 
   const [errors, setErrors] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false); // Nuevo estado para controlar la confirmación
 
   useEffect(() => {
-    console.log('availableTimes:', availableTimes); // Esto te ayudará a verificar que availableTimes está definido
+    console.log('availableTimes:', availableTimes);
   }, [availableTimes]);
 
   useEffect(() => {
@@ -34,12 +35,12 @@ function BookingForm({ availableTimes, dispatch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Reservación enviada:', formData);
+    setIsSubmitted(true); // Actualiza el estado cuando se envía el formulario
   };
 
   const validateForm = () => {
     const errors = {};
 
-    // Validación de fecha
     const selectedDate = new Date(formData.date);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -49,24 +50,37 @@ function BookingForm({ availableTimes, dispatch }) {
       errors.date = 'La fecha no puede ser en el pasado';
     }
 
-    // Validación de hora
     if (!formData.time) {
-        errors.time = 'La hora es requerida';
-      }
+      errors.time = 'La hora es requerida';
+    }
 
-    // Validación de cantidad de comensales
     if (!formData.guests || formData.guests < 1) {
       errors.guests = '';
     }
 
-    // Validación de ocasión
     if (!formData.occasion) {
-        errors.occasion = 'La ocasión es requerida';
-      }
+      errors.occasion = 'La ocasión es requerida';
+    }
 
     setErrors(errors);
     setIsFormValid(Object.keys(errors).length === 0);
   };
+
+  if (isSubmitted) {
+    return (
+      <div style={{ margin: '100px 0px 100px 0px'}}>
+        <i className="fa fa-circle-check fa-6x icon-confirm"></i>
+        <h1>Reservación confirmada</h1>
+        <p>Gracias por su reservación. Aquí están los detalles:</p>
+        <ul className="no-bullets">
+          <li>Fecha: {formData.date}</li>
+          <li>Hora: {formData.time}</li>
+          <li>Cantidad de comensales: {formData.guests}</li>
+          <li>Ocasión: {formData.occasion}</li>
+        </ul>
+      </div>
+    );
+  }
 
   return (
     <>
